@@ -1,0 +1,85 @@
+body {
+  padding-top: 20px;
+}
+h1 {
+  color: #5a6275;
+  display: inline-block;
+}
+
+.city-info p {
+  color: #9fa4ad;
+  text-align: right;
+  line-height: 1;
+  font-size: 13px;
+}
+.city-info p:first-child {
+  color: #5a6275;
+  font-size: 15px;
+}
+.light-gray {
+  color: #9fa4ad !important;
+}
+.nav {
+  margin-top: 40px;
+}
+.nav .nav-item.show .nav-link,
+.nav .nav-link.active,
+.nav .nav-link:focus,
+.nav .nav-link:hover,
+.nav,
+.nav .nav-link {
+  border: none;
+  background: #fff;
+  background-color: #fff;
+  color: #5a6275;
+}
+.nav-link.active {
+  border-bottom: 2px solid #ffa726 !important;
+}
+img {
+  width: 100%;
+}
+.time-list,
+.days-list {
+  margin: 0px;
+  padding: 0px;
+}
+.time-list li,
+.days-list li {
+  float: left;
+  width: 12%;
+  list-style-type: none;
+  text-align: center;
+}
+.time-list li {
+  padding-top: 15px;
+  font-size: 11px;
+}
+.days-list li {
+  margin-top: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+.days-list li:first-child {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.days-list li i {
+  margin-top: 15px;
+  font-size: 25px;
+}
+.days-list li span {
+  margin-top: 10px;
+  display: block;
+  color: #83868d;
+}
+.degrees a {
+  color: #5a6275;
+  text-decoration: none;
+}
+.degrees a:hover {
+  color: #5a6275;
+  text-decoration: none;
+}
