@@ -1,6 +1,9 @@
 body {
   padding-top: 20px;
 }
+.wx-650 {
+  max-width: 650px;
+}
 h1 {
   color: #5a6275;
   display: inline-block;

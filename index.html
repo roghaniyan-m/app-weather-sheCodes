@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container border p-4 rounded wx-650">
       <div class="row mb-5">
         <div class="col-8">
           <input
@@ -60,11 +60,9 @@
             </div>
             <div class="col-6 small px-0 light-gray">
               <span>
-                Precipitation: 22%
+                Humidity: <span id="humidity">48</span>%
                 <br />
-                Humidity: 48%
-                <br />
-                Wind: 5 mph
+                Wind: <span id="wind">5</span> m/h
               </span>
             </div>
           </div>
@@ -81,54 +79,65 @@
           </div>
         </div>
       </div>
-      <nav>
-        <div class="nav">
-          <button class="nav-link active" id="button-1">Temperature</button>
-          <button class="nav-link" id="button-2">Precipitation</button>
-          <button class="nav-link" id="button-3">Wind</button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active">
-          <img src="images/image.png" alt="" />
-          <ul class="time-list">
-            <li>1 PM</li>
-            <li>4 PM</li>
-            <li>7 PM</li>
-            <li>10 PM</li>
-            <li>1 AM</li>
-            <li>4 AM</li>
-            <li>7 AM</li>
-            <li>10 AM</li>
-          </ul>
-          <ul class="days-list">
-            <li>
-              Mon<br /><i class="fas fa-cloud-showers-heavy"></i
-              ><span>52°41°</span>
-            </li>
-            <li>
-              Tue<br /><i class="fas fa-cloud-rain"></i><span>52°41°</span>
-            </li>
-            <li>
-              Wed<br /><i class="fas fa-cloud-sun"></i><span>52°41°</span>
-            </li>
-            <li>
-              Thu<br /><i class="far fa-snowflake"></i><span>52°41°</span>
-            </li>
-            <li>Fri<br /><i class="fas fa-sun"></i><span>52°41°</span></li>
-            <li>Sat<br /><i class="fas fa-cloud"></i><span>52°41°</span></li>
-            <li>
-              Sun<br /><i class="fas fa-cloud-sun-rain"></i><span>52°41°</span>
-            </li>
-            <li>
-              Mon<br /><i class="fas fa-cloud-showers-heavy"></i
-              ><span>52°41°</span>
-            </li>
-          </ul>
+      <div class="row">
+        <div class="col-12">
+          <nav>
+            <div class="nav">
+              <button class="nav-link active" id="button-1">Temperature</button>
+              <button class="nav-link" id="button-2">Precipitation</button>
+              <button class="nav-link" id="button-3">Wind</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active">
+              <img src="images/image.png" alt="" />
+              <div>
+                <ul class="time-list">
+                  <li>1 PM</li>
+                  <li>4 PM</li>
+                  <li>7 PM</li>
+                  <li>10 PM</li>
+                  <li>1 AM</li>
+                  <li>4 AM</li>
+                  <li>7 AM</li>
+                  <li>10 AM</li>
+                </ul>
+                <ul class="days-list">
+                  <li>
+                    Mon<br /><i class="fas fa-cloud-showers-heavy"></i
+                    ><span>52°41°</span>
+                  </li>
+                  <li>
+                    Tue<br /><i class="fas fa-cloud-rain"></i
+                    ><span>52°41°</span>
+                  </li>
+                  <li>
+                    Wed<br /><i class="fas fa-cloud-sun"></i><span>52°41°</span>
+                  </li>
+                  <li>
+                    Thu<br /><i class="far fa-snowflake"></i><span>52°41°</span>
+                  </li>
+                  <li>
+                    Fri<br /><i class="fas fa-sun"></i><span>52°41°</span>
+                  </li>
+                  <li>
+                    Sat<br /><i class="fas fa-cloud"></i><span>52°41°</span>
+                  </li>
+                  <li>
+                    Sun<br /><i class="fas fa-cloud-sun-rain"></i
+                    ><span>52°41°</span>
+                  </li>
+                  <li>
+                    Mon<br /><i class="fas fa-cloud-showers-heavy"></i
+                    ><span>52°41°</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
     <script src="src/index.js"></script>
   </body>
 </html>
