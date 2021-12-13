@@ -18,125 +18,139 @@
   </head>
 
   <body>
-    <div class="container border p-4 rounded wx-650">
-      <div class="row mb-5">
-        <div class="col-8">
-          <input
-            class="form-control"
-            placeholder="Type a city..."
-            id="city-name"
-          />
+    <div class="container wx-650">
+      <div class="border p-4 rounded">
+        <div class="row mb-5">
+          <div class="col-8">
+            <input
+              class="form-control"
+              placeholder="Type a city..."
+              id="city-name"
+            />
+          </div>
+          <div class="col-4">
+            <button
+              class="btn btn-primary inline-block"
+              id="search-btn"
+              type="button"
+            >
+              Search
+            </button>
+            <button
+              class="btn btn-primary inline-block"
+              type="button"
+              id="search-by-location"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </div>
         </div>
-        <div class="col-4">
-          <button
-            class="btn btn-primary inline-block"
-            id="search-btn"
-            type="button"
-          >
-            Search
-          </button>
-          <button
-            class="btn btn-primary inline-block"
-            type="button"
-            id="search-by-location"
-          >
-            <i class="fas fa-map-marker-alt"></i>
-          </button>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-6">
-          <div class="row">
-            <div class="col-6">
-              <h1>
-                <span id="current-degree">5</span
-                ><sup class="degrees"
-                  ><span><a href="#">°C</a></span
-                  ><!-- |
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-6">
+                <h1>
+                  <span id="current-degree">5</span
+                  ><sup class="degrees"
+                    ><span><a href="#">°C</a></span
+                    ><!-- |
                    <span><a href="#" class="light-gray">°F</a></span>--></sup
-                >
-              </h1>
+                  >
+                </h1>
+              </div>
+              <div class="col-6 small px-0 light-gray">
+                <span>
+                  Humidity: <span id="humidity">48</span>%
+                  <br />
+                  Wind: <span id="wind">5</span> m/h
+                </span>
+              </div>
             </div>
-            <div class="col-6 small px-0 light-gray">
-              <span>
-                Humidity: <span id="humidity">48</span>%
-                <br />
-                Wind: <span id="wind">5</span> m/h
-              </span>
+          </div>
+          <div class="col-6">
+            <div class="city-info">
+              <p id="display-city">
+                <strong>Tehran, Tehran Province, Iran</strong>
+              </p>
+              <p id="date-time">
+                Monday 12:00 PM<br />
+                Haze
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="city-info">
-            <p id="display-city">
-              <strong>Tehran, Tehran Province, Iran</strong>
-            </p>
-            <p id="date-time">
-              Monday 12:00 PM<br />
-              Haze
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <nav>
-            <div class="nav">
-              <button class="nav-link active" id="button-1">Temperature</button>
-              <button class="nav-link" id="button-2">Precipitation</button>
-              <button class="nav-link" id="button-3">Wind</button>
-            </div>
-          </nav>
-          <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active">
-              <img src="images/image.png" alt="" />
-              <div>
-                <ul class="time-list">
-                  <li>1 PM</li>
-                  <li>4 PM</li>
-                  <li>7 PM</li>
-                  <li>10 PM</li>
-                  <li>1 AM</li>
-                  <li>4 AM</li>
-                  <li>7 AM</li>
-                  <li>10 AM</li>
-                </ul>
-                <ul class="days-list">
-                  <li>
-                    Mon<br /><i class="fas fa-cloud-showers-heavy"></i
-                    ><span>52°41°</span>
-                  </li>
-                  <li>
-                    Tue<br /><i class="fas fa-cloud-rain"></i
-                    ><span>52°41°</span>
-                  </li>
-                  <li>
-                    Wed<br /><i class="fas fa-cloud-sun"></i><span>52°41°</span>
-                  </li>
-                  <li>
-                    Thu<br /><i class="far fa-snowflake"></i><span>52°41°</span>
-                  </li>
-                  <li>
-                    Fri<br /><i class="fas fa-sun"></i><span>52°41°</span>
-                  </li>
-                  <li>
-                    Sat<br /><i class="fas fa-cloud"></i><span>52°41°</span>
-                  </li>
-                  <li>
-                    Sun<br /><i class="fas fa-cloud-sun-rain"></i
-                    ><span>52°41°</span>
-                  </li>
-                  <li>
-                    Mon<br /><i class="fas fa-cloud-showers-heavy"></i
-                    ><span>52°41°</span>
-                  </li>
-                </ul>
+        <div class="row">
+          <div class="col-12">
+            <nav>
+              <div class="nav">
+                <button class="nav-link active" id="button-1">
+                  Temperature
+                </button>
+                <button class="nav-link" id="button-2">Precipitation</button>
+                <button class="nav-link" id="button-3">Wind</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active">
+                <img src="images/image.png" alt="" />
+                <div>
+                  <ul class="time-list">
+                    <li>1 PM</li>
+                    <li>4 PM</li>
+                    <li>7 PM</li>
+                    <li>10 PM</li>
+                    <li>1 AM</li>
+                    <li>4 AM</li>
+                    <li>7 AM</li>
+                    <li>10 AM</li>
+                  </ul>
+                  <ul class="days-list">
+                    <li>
+                      Mon<br /><i class="fas fa-cloud-showers-heavy"></i
+                      ><span>52°41°</span>
+                    </li>
+                    <li>
+                      Tue<br /><i class="fas fa-cloud-rain"></i
+                      ><span>52°41°</span>
+                    </li>
+                    <li>
+                      Wed<br /><i class="fas fa-cloud-sun"></i
+                      ><span>52°41°</span>
+                    </li>
+                    <li>
+                      Thu<br /><i class="far fa-snowflake"></i
+                      ><span>52°41°</span>
+                    </li>
+                    <li>
+                      Fri<br /><i class="fas fa-sun"></i><span>52°41°</span>
+                    </li>
+                    <li>
+                      Sat<br /><i class="fas fa-cloud"></i><span>52°41°</span>
+                    </li>
+                    <li>
+                      Sun<br /><i class="fas fa-cloud-sun-rain"></i
+                      ><span>52°41°</span>
+                    </li>
+                    <li>
+                      Mon<br /><i class="fas fa-cloud-showers-heavy"></i
+                      ><span>52°41°</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <br />
+      <a
+        href="https://github.com/roghaniyan-m/app-weather-sheCodes"
+        target="_blank"
+        rel="no-refere"
+        >Open-source code</a
+      >
+      by Maryam Roghaniyan
     </div>
     <script src="src/index.js"></script>
   </body>
