@@ -23,7 +23,7 @@ h1 {
   color: #9fa4ad !important;
 }
 .nav {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .nav .nav-item.show .nav-link,
 .nav .nav-link.active,
@@ -50,7 +50,7 @@ img {
 .time-list li,
 .days-list li {
   float: left;
-  width: 12%;
+  width: 14.2%;
   list-style-type: none;
   text-align: center;
 }
@@ -78,6 +78,11 @@ img {
   display: block;
   color: #83868d;
 }
+.degrees {
+  font-size: 19px;
+  position: relative;
+  top: -20px;
+}
 .degrees a {
   color: #5a6275;
   text-decoration: none;
@@ -85,4 +90,15 @@ img {
 .degrees a:hover {
   color: #5a6275;
   text-decoration: none;
+}
+.btn-search {
+  background: #ffa726;
+  color: #333;
+  box-shadow: 2px 2px 3px rgba(3, 3, 3, 0.08);
+  transition: all 200 ease-in-out;
+}
+.btn-search:hover {
+  box-shadow: 2px 2px 3px rgba(3, 3, 3, 0.12);
+  background: #f8af42;
+  color: #fff;
 }

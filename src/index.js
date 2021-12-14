@@ -1,57 +1,73 @@
-// let celicus = document.querySelector("#current-degree").innerHTML.trim();
-let searchBtn = document.querySelector("#search-btn");
-let searchByLocation = document.querySelector("#search-by-location");
+let celicus = null;
+let weatherForm = document.querySelector("#weather-form");
+// let searchByLocation = document.querySelector("#search-by-location");
 function changedate() {
   let now = new Date();
   let days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday"
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
   ];
 
   document.querySelector("#date-time").innerHTML = `${days[now.getDay()]
-    } ${now.getHours()}:${now.getMinutes()} <br/> Haze`;
+    } ${now.getHours()}:${now.getMinutes()} `;
+  document.querySelector("#currentday").innerHTML = `${days[now.getDay()]}`;
+
 }
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-  document.querySelector("#display-city strong").innerHTML = response.data.name;
+  document.querySelector("#display-city").innerHTML = `<strong>${response.data.name},${response.data.sys.country} </strong><br/>${response.data.weather[0].main}`;
   document.querySelector("#current-degree").innerHTML = temperature;
+  celicus = response.data.main.temp
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector(".temp-icon").setAttribute('src', `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#currenttemp").innerHTML = temperature + '°C'
   changedate("");
 }
 
-function findPosition(position) {
-  console.log(position);
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
+// function findPosition(position) {
+//   console.log(position);
+//   let lat = position.coords.latitude;
+//   let lon = position.coords.longitude;
+//   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+//   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+//   axios.get(url).then(showWeather);
+// }
+function changeCity(event) {
+  event.preventDefault()
+  let cityname = document.querySelector("#city-name").value
+  changedate();
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
-}
-function changeCity() {
-  let cityname = document.querySelector("#city-name").value;
-  if (cityname) {
-    changedate();
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=${apiKey}`;
-    axios.get(url).then(showWeather);
-  }
-}
-searchBtn.addEventListener("click", changeCity);
-searchByLocation.addEventListener("click", function () {
-  navigator.geolocation.getCurrentPosition(findPosition);
-});
 
-let ii =
-{
-  "coord": { "lon": 52.5388, "lat": 29.6036 },
-  "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }],
-  "base": "stations",
-  "main": { "temp": 16.69, "feels_like": 14.75, "temp_min": 16.69, "temp_max": 16.69, "pressure": 1024, "humidity": 13 },
-  "visibility": 10000, "wind": { "speed": 0, "deg": 0 }, "clouds": { "all": 0 }, "dt": 1639389325, "sys": { "type": 1, "id": 7500, "country": "IR", "sunrise": 1639365364, "sunset": 1639402328 }, "timezone": 12600, "id": 115019, "name": "Shiraz", "cod": 200
 }
+
+weatherForm.addEventListener("submit", changeCity);
+// searchByLocation.addEventListener("click", function () {
+//   navigator.geolocation.getCurrentPosition(findPosition);
+// });
+let degrees = document.querySelectorAll(".degrees a");
+
+function convertToF(event) {
+  event.preventDefault();
+  degrees[1].classList.add("light-gray");
+  degrees[0].classList.remove("light-gray");
+  document.querySelector("#current-degree").innerHTML = Math.round(celicus);
+}
+function convertToC(event) {
+  event.preventDefault();
+  degrees[0].classList.add("light-gray");
+  degrees[1].classList.remove("light-gray");
+  document.querySelector("#current-degree").innerHTML = Math.round(
+    (celicus * 9) / 5 + 32
+  );
+}
+degrees[0].addEventListener("click", convertToF);
+degrees[1].addEventListener("click", convertToC);
+
