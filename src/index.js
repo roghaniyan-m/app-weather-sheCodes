@@ -16,8 +16,12 @@ function changedate() {
   document.querySelector("#currentday").innerHTML = `${days[now.getDay()]}`;
 
 }
+function getForcastTempreture(forcastCoords) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}`
 
+}
 function showWeather(response) {
+  gtForcastTempreture(response.data.coord)
   let temperature = Math.round(response.data.main.temp);
   document.querySelector("#display-city").innerHTML = `<strong>${response.data.name},${response.data.sys.country} </strong>`;
   document.querySelector(".haze").innerHTML = response.data.weather[0].main;
