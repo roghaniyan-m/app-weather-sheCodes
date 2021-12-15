@@ -18,6 +18,7 @@ h1 {
 .city-info p:first-child {
   color: #5a6275;
   font-size: 15px;
+  letter-spacing: 0.5px;
 }
 .light-gray {
   color: #9fa4ad !important;
@@ -65,9 +66,9 @@ img {
   font-size: 13px;
 }
 .days-list li:first-child {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.01);
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 .days-list li i {
   margin-top: 15px;
@@ -101,4 +102,13 @@ img {
   box-shadow: 2px 2px 3px rgba(3, 3, 3, 0.12);
   background: #f8af42;
   color: #fff;
+}
+#display-city {
+  margin-bottom: 8px;
+}
+#date-time {
+  margin-bottom: 10px;
+}
+.haze {
+  line-height: 1;
 }

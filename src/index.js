@@ -1,6 +1,5 @@
 let celicus = null;
 let weatherForm = document.querySelector("#weather-form");
-// let searchByLocation = document.querySelector("#search-by-location");
 function changedate() {
   let now = new Date();
   let days = [
@@ -12,15 +11,16 @@ function changedate() {
     "Sat",
     "Sun"
   ];
-
   document.querySelector("#date-time").innerHTML = `${days[now.getDay()]
     } ${now.getHours()}:${now.getMinutes()} `;
   document.querySelector("#currentday").innerHTML = `${days[now.getDay()]}`;
 
 }
+
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-  document.querySelector("#display-city").innerHTML = `<strong>${response.data.name},${response.data.sys.country} </strong><br/>${response.data.weather[0].main}`;
+  document.querySelector("#display-city").innerHTML = `<strong>${response.data.name},${response.data.sys.country} </strong>`;
+  document.querySelector(".haze").innerHTML = response.data.weather[0].main;
   document.querySelector("#current-degree").innerHTML = temperature;
   celicus = response.data.main.temp
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
@@ -30,30 +30,20 @@ function showWeather(response) {
   changedate("");
 }
 
-// function findPosition(position) {
-//   console.log(position);
-//   let lat = position.coords.latitude;
-//   let lon = position.coords.longitude;
-//   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-//   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-//   axios.get(url).then(showWeather);
-// }
 function changeCity(event) {
   event.preventDefault()
   let cityname = document.querySelector("#city-name").value
   changedate();
+  callApi(cityname)
+}
+function callApi(cityname) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
-
 }
-
 weatherForm.addEventListener("submit", changeCity);
-// searchByLocation.addEventListener("click", function () {
-//   navigator.geolocation.getCurrentPosition(findPosition);
-// });
-let degrees = document.querySelectorAll(".degrees a");
 
+let degrees = document.querySelectorAll(".degrees a");
 function convertToF(event) {
   event.preventDefault();
   degrees[1].classList.add("light-gray");
@@ -71,3 +61,4 @@ function convertToC(event) {
 degrees[0].addEventListener("click", convertToF);
 degrees[1].addEventListener("click", convertToC);
 
+callApi('Tehran');
