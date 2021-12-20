@@ -23,6 +23,7 @@ h1 {
 .light-gray {
   color: #9fa4ad !important;
 }
+
 .nav {
   margin-top: 20px;
 }
@@ -76,8 +77,11 @@ img {
 }
 .days-list li span {
   margin-top: 10px;
-  display: block;
+
   color: #83868d;
+}
+.days-list li .stronger-color {
+  color: #333;
 }
 .degrees {
   font-size: 19px;
@@ -111,4 +115,7 @@ img {
 }
 .haze {
   line-height: 1;
+}
+.red-border {
+  border-color: rgb(236, 4, 4);
 }
